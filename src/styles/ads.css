@@ -1,0 +1,29 @@
+.ads-container {
+    height: 20px;
+    /*background-color: #5de6de;*/
+    background-image: linear-gradient(315deg, #D36E70 10%, #F7CAC9 90%);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 550;
+    overflow: hidden; /* Ensure text overflow is hidden */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  /* Define animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%); /* Start off-screen right */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll to off-screen left */
+    }
+  }
+  
+  /* Apply animation to text inside ads container */
+  .ads-container span {
+    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+    display: inline-block; /* Ensure text scrolls horizontally */
+  }
+  
+  

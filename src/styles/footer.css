@@ -1,0 +1,62 @@
+:root {
+    --hero-bg: linear-gradient(315deg, #D36E70 0%, #F7CAC9 100%);
+    --primary-color: #D36E70;
+    --secondary-color: #1C1C1C;
+    --third-color: #333333;
+}
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background-color: var(--third-color);
+  color: whitesmoke;
+}
+
+.foot__text {
+  line-height: 30px;
+  color: whitesmoke;
+}
+
+.quick__links-title {
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.footer__quick-links ul li  {
+  background: transparent !important;
+}
+
+.footer__quick-links ul li a {
+  color: whitesmoke;
+}
+
+.footer__social {
+  margin-top: 20px;
+}
+
+.footer__social a {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.footer_-contact li {
+  color: whitesmoke;
+}
+
+.footer_-contact li {
+  font-size: 1.2rem;
+}
+
+.footer_-contact p {
+  font-size: 0.9rem;
+}
+
+.footer__copyright {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+  

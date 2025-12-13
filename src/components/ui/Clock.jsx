@@ -1,0 +1,67 @@
+import React, {useState, useEffect, Component} from 'react'
+import '../../styles/clock.css'
+
+const Clock = () => {
+
+    const [days, setDays] = useState()
+    const [hours, setHours] = useState()
+    const [minutes, setMinutes] = useState()
+    const [secondes, setSeconds] = useState()
+
+    let interval;
+
+    const countDown = ()=>{
+        const destination = new Date('June 15, 2024').getTime()
+        interval = setInterval(()=>{
+            const now = new Date().getTime()
+            const different = destination - now
+            const days = Math.floor(different / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((different % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((different % (1000 * 60 * 60)) / (1000 * 60));
+            const secondes = Math.floor((different % (1000 * 60)) / 1000);
+            if(destination < 0)clearInterval(interval.current)
+                else{
+            setDays(days)
+            setHours(hours)
+            setMinutes(minutes)
+            setSeconds(secondes)
+            }
+        });
+    };
+
+    useEffect(()=>{
+        countDown()
+    })
+
+  return <div className="clock__wrapper d-flex align-items-center gap-3">
+    <div className="clock__data d-flex align-items-center gap-5">
+        <div className="text-center">
+            <h1 className="text-white fs-3 mb-2">{days}</h1>
+            <h5 className="text-white fs-5">Jours</h5>
+        </div>
+        <span className="text-white fs-3">:</span>
+    </div>
+    <div className="clock__data d-flex align-items-center gap-3">
+        <div className="text-center">
+            <h1 className="text-white fs-3 mb-2">{hours}</h1>
+            <h5 className="text-white fs-5">Heures</h5>
+        </div>
+        <span className="text-white fs-3">:</span>
+    </div>
+    <div className="clock__data d-flex align-items-center gap-3">
+        <div className="text-center">
+            <h1 className="text-white fs-3 mb-2">{minutes}</h1>
+            <h5 className="text-white fs-5">Minutes</h5>
+        </div>
+        <span className="text-white fs-3">:</span>
+    </div>
+    <div className="clock__data d-flex align-items-center gap-3">
+        <div className="text-center">
+            <h1 className="text-white fs-3 mb-2">{secondes}</h1>
+            <h5 className="text-white fs-5">Secondes</h5>
+        </div>
+    </div>
+  </div>
+}
+
+export default Clock
